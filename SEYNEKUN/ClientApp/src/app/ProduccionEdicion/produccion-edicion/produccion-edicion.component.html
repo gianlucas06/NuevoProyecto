@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h5>Gestionar</h5>
+            <form>
+                <div class="form-group">
+                    <label>Codigo</label>
+                    <input type="text" name="idregistro" [(ngModel)]="panela.idregistro" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="etapas">Etapas</label>
+                    <select class="form-control" name="etapas">
+                        <option *ngFor="let panela of panelas" value={{panela.etapas}}>
+                            {{panela.etapas}}
+                        </option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <a [routerLink]="['/PanelaConsulta']">
+                        <button class="btn btn-primary mr-1" (click)="update()">Actualizar</button>
+                    </a>
+                    <a [routerLink]="['/PanelaConsulta']">
+                        <button class="btn btn-primary mr-1" (click)="delete()">Eliminar</button>
+                    </a>
+                    <a [routerLink]="['/PanelaConsulta']">
+                        <button class="btn btn-secondary" type="reset">Cancel</button>
+                    </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
